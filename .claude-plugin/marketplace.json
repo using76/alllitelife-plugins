@@ -1,0 +1,16 @@
+{
+  "name": "alllitelife",
+  "owner": {
+    "name": "Alllitelife IT"
+  },
+  "description": "올라이트라이프 사내 허브 연결 플러그인 — 회사 계정이 있어야 쓸 수 있다(허브는 사내망에만 있다)",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "allite-hub",
+      "source": "./plugins/allite-hub",
+      "description": "올라이트라이프 사내 허브(온톨로지 조회 + 규칙을 지키는 쓰기)를 Claude Code 에 연결한다. 설치한 뒤 /allite-hub:connect 에 관리자가 준 server.json(또는 허브 주소)을 주면 인증서·연결을 설정하고, 로그인은 브라우저의 허브 화면에서 회사 아이디·비밀번호로 한다(토큰을 따로 만들지 않는다). 허브 사용 규칙·실시간 감시(관리자) 스킬 포함.",
+      "category": "internal"
+    }
+  ]
+}
