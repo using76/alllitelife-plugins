@@ -17,7 +17,8 @@ MCP 서버는 플러그인의 `.mcp.json` 이 아니라 **연결 스킬이 사�
 ## 사원 PC 설치
 
 1. 플러그인 설치(둘 중 하나)
-   - 마켓플레이스(공개 저장소로 올린 경우): Claude Code 에서 `/plugin marketplace add <owner>/<repo>` → `/plugin` → `allite-hub` 설치
+   - 공개 마켓플레이스 `using76/alllitelife-plugins`: Claude Code 에서 `/plugin marketplace add using76/alllitelife-plugins` → `/plugin` →
+     `allite-hub` 설치. **PC 에 git 이 있어야 한다**(Windows: `winget install --id Git.Git -e` — 없으면 `Command 'git' not found`)
    - 회사 키트: 관리자 포털 → 클라이언트 내려받기 → `ows-claude-plugin-<ver>.zip` 을 `C:\ows\` 에 풀고
      `claude plugin marketplace add C:\ows\ows-marketplace` → `claude plugin install allite-hub@alllitelife`
 2. `/allite-hub:connect <server.json 경로 또는 허브 주소>` — 관리자 포털의 `server.json`(주소 + 인증서 지문)을 주면 지문을 대조해 인증서를 믿고
