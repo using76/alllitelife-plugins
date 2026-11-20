@@ -17,8 +17,9 @@ MCP 서버는 플러그인의 `.mcp.json` 이 아니라 **연결 스킬이 사�
 ## 사원 PC 설치
 
 1. 플러그인 설치(둘 중 하나)
-   - 공개 마켓플레이스 `using76/alllitelife-plugins`: Claude Code 에서 `/plugin marketplace add using76/alllitelife-plugins` → `/plugin` →
-     `allite-hub` 설치. **PC 에 git 이 있어야 한다**(Windows: `winget install --id Git.Git -e` — 없으면 `Command 'git' not found`)
+   - 공개 마켓플레이스(git 필요 없음): Claude Code 에서
+     `/plugin marketplace add https://raw.githubusercontent.com/using76/alllitelife-plugins/main/dist/marketplace.json` →
+     `/plugin install allite-hub@alllitelife`. (git 이 있는 PC 는 `/plugin marketplace add using76/alllitelife-plugins` 도 된다)
    - 회사 키트: 관리자 포털 → 클라이언트 내려받기 → `ows-claude-plugin-<ver>.zip` 을 `C:\ows\` 에 풀고
      `claude plugin marketplace add C:\ows\ows-marketplace` → `claude plugin install allite-hub@alllitelife`
 2. `/allite-hub:connect <server.json 경로 또는 허브 주소>` — 관리자 포털의 `server.json`(주소 + 인증서 지문)을 주면 지문을 대조해 인증서를 믿고
@@ -33,7 +34,8 @@ MCP 서버는 플러그인의 `.mcp.json` 이 아니라 **연결 스킬이 사�
 
 ```
 python workspace/tools/build_claude_plugin.py zip --out dist --hub-url https://<허브>:8443 --fingerprint AA:BB:…   # 회사 키트(기본 허브 포함)
-python workspace/tools/build_claude_plugin.py marketplace --out <폴더>                                         # 공개 저장소용(회사 주소 없음)
+python workspace/tools/build_claude_plugin.py marketplace --out <폴더> --repo using76/alllitelife-plugins   # 공개 저장소용(회사 주소 없음,
+                                                                       # dist/ = git 없이 받는 URL 카탈로그 + zip)
 ```
 
 허브와 같은 버전으로 함께 올린다(`workspace/VERSION`). 플러그인 `version` 을 올리지 않으면 Claude Code 가 업데이트로 보지 않는다.
